@@ -1,12 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancoDigital.View.CadastroCliente">
+             x:Class="AppBancoDigital.View.CadastroCliente"
+             Title="Abra sua Conta">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+        <StackLayout Padding="10"
+                     VerticalOptions="Center">
+            <Frame CornerRadius="10">
+                <StackLayout>
+                    <Label Text="Nome: " />
+                    <Entry x:Name="txt_nome" />
+
+                    <Label Text="E-mail: " />
+                    <Entry x:Name="txt_email" Keyboard="Email" />
+
+                    <Frame Margin="10" BackgroundColor="#eee">
+                        <StackLayout>
+                            <Label Text="Senha: " />
+                            <Entry x:Name="txt_senha" IsPassword="True" />
+
+                            <Label Text="Confirme a Senha: " />
+                            <Entry x:Name="txt_senha_confirmacao" IsPassword="True" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Button Text="Cadastrar" Clicked="Button_Clicked_Cadastrar" />
+                </StackLayout>               
+            </Frame>
+
+            <Button Text="Fazer Login" Clicked="Button_Clicked_Login" />
+            
         </StackLayout>
+        
+        
     </ContentPage.Content>
 </ContentPage>

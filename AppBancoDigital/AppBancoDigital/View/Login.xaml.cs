@@ -15,6 +15,18 @@ namespace AppBancoDigital.View
         public Login()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
+
+        private void Button_Clicked_Cadastro(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new View.CadastroCliente());
+        }
+
+        private void Button_Clicked_Entrar(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new View.TelaInicial());
         }
     }
 }

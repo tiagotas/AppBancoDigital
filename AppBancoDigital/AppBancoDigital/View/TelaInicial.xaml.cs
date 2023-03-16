@@ -10,21 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace AppBancoDigital.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroCliente : ContentPage
+    public partial class TelaInicial : ContentPage
     {
-        public CadastroCliente()
+        public TelaInicial()
         {
             InitializeComponent();
         }
 
-        private void Button_Clicked_Cadastrar(object sender, EventArgs e)
+        private void Button_Clicked_Fazer_Pix(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.TelaInicial());
+            Navigation.PushAsync(new View.Pix.FazerPix());
         }
 
-        private void Button_Clicked_Login(object sender, EventArgs e)
+        private void Button_Clicked_Receber_Pix(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+            Navigation.PushAsync(new View.Pix.ReceberPix());
         }
     }
 }

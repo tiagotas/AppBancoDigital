@@ -3,10 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancoDigital.View.Login">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="Center" Margin="20">
+            <Frame BorderColor="#CCC" 
+                   HasShadow="True"
+                   CornerRadius="10">
+                <StackLayout>
+                    <Label Text="Seu e-mail:" />
+                    <Entry x:Name="txt_email" />
+                    <Label Text="Sua senha:" />
+                    <Entry x:Name="txt_senha" />
+                    <Button Text="Entrar" Clicked="Button_Clicked_Entrar" />
+                    <Button Text="Abrir Minha Conta" Clicked="Button_Clicked_Cadastro" />
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

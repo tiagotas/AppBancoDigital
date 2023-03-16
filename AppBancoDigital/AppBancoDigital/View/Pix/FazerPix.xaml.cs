@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppBancoDigital.View
+namespace AppBancoDigital.View.Pix
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PixExibirQrCode : ContentPage
+    public partial class FazerPix : ContentPage
     {
-        /**
-         * https://github.com/iamlawrencev/QRCodeGenerator-Xamarin.Forms
-         */
-        public PixExibirQrCode()
+        public FazerPix()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new View.Pix.PixLerQrCode());
         }
     }
 }
