@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppBancoDigital.View.Pix
+namespace AppBancoDigital.View.Cliente
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FazerPix : ContentPage
+    public partial class MeusDados : ContentPage
     {
-        public FazerPix()
+        public MeusDados()
         {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new View.Pix.PixLerQrCode());
         }
     }
 }

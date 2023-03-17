@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppBancoDigital.View
+namespace AppBancoDigital.View.Cliente
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CadastroCliente : ContentPage

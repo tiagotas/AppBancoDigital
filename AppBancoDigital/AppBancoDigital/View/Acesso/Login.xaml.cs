@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppBancoDigital.View
+namespace AppBancoDigital.View.Acesso
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
@@ -21,7 +21,7 @@ namespace AppBancoDigital.View
 
         private void Button_Clicked_Cadastro(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.CadastroCliente());
+            Navigation.PushAsync(new View.Cliente.CadastroCliente());
         }
 
         private void Button_Clicked_Entrar(object sender, EventArgs e)

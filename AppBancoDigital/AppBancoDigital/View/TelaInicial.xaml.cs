@@ -19,7 +19,7 @@ namespace AppBancoDigital.View
 
         private void Button_Clicked_Fazer_Pix(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.Pix.FazerPix());
+            Navigation.PushAsync(new View.Pix.EnviarPix());
         }
 
         private void Button_Clicked_Receber_Pix(object sender, EventArgs e)

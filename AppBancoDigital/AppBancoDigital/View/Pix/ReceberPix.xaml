@@ -4,9 +4,7 @@
              x:Class="AppBancoDigital.View.Pix.ReceberPix">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="ABRIR A CAMERA PARA LER UM QR CODE"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Ler um QR Code" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

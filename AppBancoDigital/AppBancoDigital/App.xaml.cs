@@ -10,7 +10,7 @@ namespace AppBancoDigital
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new View.Login());
+            MainPage = new NavigationPage(new View.Acesso.Login());
         }
 
         protected override void OnStart()
