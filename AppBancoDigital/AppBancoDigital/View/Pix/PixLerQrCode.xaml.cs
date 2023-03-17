@@ -14,6 +14,11 @@ namespace AppBancoDigital.View.Pix
     {
         public PixLerQrCode()
         {
+            /**
+             * https://www.c-sharpcorner.com/article/embedding-qr-code-scanner-in-xamarin-forms/
+             * https://github.com/androidmads/ZxingScreenScanner
+             * https://github.com/Redth/ZXing.Net.Mobile
+             */
             InitializeComponent();
 
             zxing.OnScanResult += (result) =>
