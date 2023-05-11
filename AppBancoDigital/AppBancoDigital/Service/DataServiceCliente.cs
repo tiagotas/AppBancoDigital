@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using AppBancoDigital.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,61 +7,30 @@ using System.Threading.Tasks;
 
 namespace AppBancoDigital.Service
 {
-    internal class DataServiceCliente : DataService
+    public class DataServiceCliente : DataService
     {
         /**
-        * Obtém a lista de pessoas
-        */
-        public static async Task<List<Pessoa>> GetPessoasAsync()
-        {
-            string json = await DataService.GetDataFromService("/pessoa");
-
-            List<Pessoa> arr_pessoas = JsonConvert.DeserializeObject<List<Pessoa>>(json);
-
-            return arr_pessoas;
-        }
-
-        /**
-         * Envia um Model em forma de JSON ara insert no banco.
+         * Realiza o login do cliente.
          */
-        public static async Task<Pessoa> Cadastrar(Pessoa c)
+        public static async Task<Cliente> LoginAsync(Cliente c)
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
 
-            string json = await DataService.PostDataToService(json_a_enviar, "/pessoa/salvar");
+            string json = await DataService.PostDataToService(json_a_enviar, "/cliente/entrar");
 
-            Pessoa p = JsonConvert.DeserializeObject<Pessoa>(json);
-
-            return p;
+            return JsonConvert.DeserializeObject<Cliente>(json);
         }
 
         /**
-         * Realiza uma busca de pessoas no banco de dados.
+         * Envia a Model de um Cliente para ser cadastrado no banco.
          */
-        public static async Task<List<Pessoa>> SearchAsync(string q)
+        public static async Task<Cliente> SaveAsync(Cliente c)
         {
-            var json_a_enviar = JsonConvert.SerializeObject(q);
+            var json_a_enviar = JsonConvert.SerializeObject(c);
 
-            string json = await DataService.PostDataToService(json_a_enviar, "/pessoa/buscar");
+            string json = await DataService.PostDataToService(json_a_enviar, "/cliente/salvar");
 
-            List<Pessoa> arr_pessoas = JsonConvert.DeserializeObject<List<Pessoa>>(json);
-
-            return arr_pessoas;
+            return JsonConvert.DeserializeObject<Cliente>(json);
         }
-
-        /**
-         * Deleta uma pessoa do banco de dados.
-         */
-        public static async Task<List<Pessoa>> DeleteAsync(int id)
-        {
-            var json_a_enviar = JsonConvert.SerializeObject(id);
-
-            string json = await DataService.PostDataToService(json_a_enviar, "/pessoa/delete");
-
-            List<Pessoa> arr_pessoas = JsonConvert.DeserializeObject<List<Pessoa>>(json);
-
-            return arr_pessoas;
-        }
-
     }
 }

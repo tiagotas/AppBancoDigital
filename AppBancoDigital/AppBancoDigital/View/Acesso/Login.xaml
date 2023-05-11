@@ -8,8 +8,8 @@
                    HasShadow="True"
                    CornerRadius="10">
                 <StackLayout>
-                    <Label Text="Seu e-mail:" />
-                    <Entry x:Name="txt_email" />
+                    <Label Text="Seu CPF:" />
+                    <Entry x:Name="txt_cpf" />
                     <Label Text="Sua senha:" />
                     <Entry x:Name="txt_senha" />
                     <Button Text="Entrar" Clicked="Button_Clicked_Entrar" />

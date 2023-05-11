@@ -15,6 +15,12 @@
                     <Label Text="E-mail: " />
                     <Entry x:Name="txt_email" Keyboard="Email" />
 
+                    <Label Text="CPF: " />
+                    <Entry x:Name="txt_cpf" Keyboard="Numeric" />
+
+                    <Label Text="Data Nascimento: " />
+                    <DatePicker x:Name="dtpck_data_nascimento" />
+
                     <Frame Margin="10" BackgroundColor="#eee">
                         <StackLayout>
                             <Label Text="Senha: " />
