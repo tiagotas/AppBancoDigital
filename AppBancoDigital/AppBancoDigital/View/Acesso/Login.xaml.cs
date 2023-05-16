@@ -35,7 +35,7 @@ namespace AppBancoDigital.View.Acesso
                     Senha = txt_senha.Text,
                 });
 
-                if (c != null)
+                if (c.Id != null)
                 {
                     await Navigation.PushAsync(new View.TelaInicial());
                 }

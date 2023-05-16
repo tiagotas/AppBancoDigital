@@ -16,7 +16,7 @@ namespace AppBancoDigital.Service
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
 
-            string json = await DataService.PostDataToService(json_a_enviar, "/cliente/entrar");
+            string json = await DataService.PostDataToService(json_a_enviar, "/correntista/entrar");
 
             return JsonConvert.DeserializeObject<Cliente>(json);
         }
@@ -28,7 +28,7 @@ namespace AppBancoDigital.Service
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
 
-            string json = await DataService.PostDataToService(json_a_enviar, "/cliente/salvar");
+            string json = await DataService.PostDataToService(json_a_enviar, "/correntista/salvar");
 
             return JsonConvert.DeserializeObject<Cliente>(json);
         }

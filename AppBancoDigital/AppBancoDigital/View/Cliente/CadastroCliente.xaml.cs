@@ -31,20 +31,17 @@ namespace AppBancoDigital.View.Cliente
                     Senha = txt_senha.Text,
                 }) ;
 
-                if (c != null)
+                if (c.Id != null)
                 {
                     await Navigation.PushAsync(new View.TelaInicial());
                 }
                 else
-                    throw new Exception("Dados de login inválidos.");
-
+                    throw new Exception("Ocorreu um erro ao salvar seu cadastro.");
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Ops!", ex.Message, "OK");
             }
-
-            Navigation.PushAsync(new View.TelaInicial());
         }
 
         private void Button_Clicked_Login(object sender, EventArgs e)

@@ -6,7 +6,7 @@ namespace AppBancoDigital.Model
 {
     public class Cliente
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public DateTime Data_Nascimento { get; set; }
