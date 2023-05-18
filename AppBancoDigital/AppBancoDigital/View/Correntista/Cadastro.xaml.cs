@@ -23,7 +23,7 @@ namespace AppBancoDigital.View.Correntista
         {
             try
             {
-                Model.Correntista c = await DataServiceCliente.SaveAsync(new Model.Correntista
+                Model.Correntista c = await DataServiceCorrentista.SaveAsync(new Model.Correntista
                 {
                     Nome = txt_nome.Text,
                     Email = txt_email.Text,

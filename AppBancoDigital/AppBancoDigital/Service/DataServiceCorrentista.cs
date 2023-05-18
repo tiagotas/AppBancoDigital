@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace AppBancoDigital.Service
 {
-    public class DataServiceCliente : DataService
+    public class DataServiceCorrentista : DataService
     {
         /**
          * Realiza o login do cliente.

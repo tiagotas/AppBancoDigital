@@ -27,7 +27,7 @@ namespace AppBancoDigital.View.Acesso
         {
             try
             {
-                Model.Correntista c = await DataServiceCliente.LoginAsync(new Model.Correntista
+                Model.Correntista c = await DataServiceCorrentista.LoginAsync(new Model.Correntista
                 {
                     Cpf = txt_cpf.Text,
                     Senha = txt_senha.Text,
@@ -36,7 +36,8 @@ namespace AppBancoDigital.View.Acesso
                 if (c.Id != null)
                 {
                     App.DadosCorrentista = c;
-                    App.Current.MainPage = new View.TelaInicial();
+                    App.Current.MainPage = new NavigationPage(new View.TelaInicial());
+                    //App.Current.MainPage = new View.TelaInicial();
                 }
                 else
                     throw new Exception("Dados de login inválidos.");
