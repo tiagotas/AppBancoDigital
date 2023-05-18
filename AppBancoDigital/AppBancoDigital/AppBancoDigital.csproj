@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\Correntista\Cadastro.xaml.cs">
+      <DependentUpon>Cadastro.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\Pix\EnviarPix.xaml.cs">
       <DependentUpon>EnviarPix.xaml</DependentUpon>
     </Compile>
@@ -33,13 +36,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\Cliente\CadastroCliente.xaml">
+    <EmbeddedResource Update="View\Correntista\Cadastro.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Acesso\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Cliente\MeusDados.xaml">
+    <EmbeddedResource Update="View\Correntista\MeusDados.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Pix\PixExibirQrCode.xaml">

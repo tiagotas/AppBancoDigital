@@ -5,15 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AppBancoDigital.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppBancoDigital.View.Cliente
+namespace AppBancoDigital.View.Correntista
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroCliente : ContentPage
+    public partial class Cadastro : ContentPage
     {
-        public CadastroCliente()
+        public Cadastro()
         {
             InitializeComponent();
         }
@@ -22,7 +23,7 @@ namespace AppBancoDigital.View.Cliente
         {
             try
             {
-                Model.Cliente c = await DataServiceCliente.SaveAsync(new Model.Cliente
+                Model.Correntista c = await DataServiceCliente.SaveAsync(new Model.Correntista
                 {
                     Nome = txt_nome.Text,
                     Email = txt_email.Text,

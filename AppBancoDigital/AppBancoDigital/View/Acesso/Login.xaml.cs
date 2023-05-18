@@ -16,20 +16,18 @@ namespace AppBancoDigital.View.Acesso
         public Login()
         {
             InitializeComponent();
-
-            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void Button_Clicked_Cadastro(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.Cliente.CadastroCliente());
+            Navigation.PushAsync(new View.Correntista.Cadastro());
         }
 
         private async void Button_Clicked_Entrar(object sender, EventArgs e)
         {
             try
             {
-                Model.Cliente c = await DataServiceCliente.LoginAsync(new Model.Cliente
+                Model.Correntista c = await DataServiceCliente.LoginAsync(new Model.Correntista
                 {
                     Cpf = txt_cpf.Text,
                     Senha = txt_senha.Text,
@@ -37,7 +35,8 @@ namespace AppBancoDigital.View.Acesso
 
                 if (c.Id != null)
                 {
-                    await Navigation.PushAsync(new View.TelaInicial());
+                    App.DadosCorrentista = c;
+                    App.Current.MainPage = new View.TelaInicial();
                 }
                 else
                     throw new Exception("Dados de login inválidos.");

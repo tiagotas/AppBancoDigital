@@ -4,6 +4,7 @@
              x:Class="AppBancoDigital.View.TelaInicial">
     <ContentPage.Content>
         <StackLayout>
+            <Label x:Name="txt_correntista" />
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
