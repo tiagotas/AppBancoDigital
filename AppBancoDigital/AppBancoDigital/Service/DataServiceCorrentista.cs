@@ -1,5 +1,6 @@
 ﻿using AppBancoDigital.Model;
 using Newtonsoft.Json;
+using System;
 using System.Threading.Tasks;
 
 namespace AppBancoDigital.Service
@@ -13,6 +14,11 @@ namespace AppBancoDigital.Service
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
 
+            Console.WriteLine("__________________________________________________________________");
+            Console.WriteLine("DADOS QUE FORAM DIGITADOS PELO USUÁRIOS E JÁ CONVERTIDOS EM JSON: ");
+            Console.WriteLine(json_a_enviar);
+            Console.WriteLine("__________________________________________________________________");
+
             string json = await DataService.PostDataToService(json_a_enviar, "/correntista/entrar");
 
             return JsonConvert.DeserializeObject<Correntista>(json);
@@ -24,6 +30,11 @@ namespace AppBancoDigital.Service
         public static async Task<Correntista> SaveAsync(Correntista c)
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
+
+            Console.WriteLine("__________________________________________________________________");
+            Console.WriteLine("DADOS QUE FORAM DIGITADOS PELO USUÁRIOS E JÁ CONVERTIDOS EM JSON: ");
+            Console.WriteLine(json_a_enviar);
+            Console.WriteLine("__________________________________________________________________");
 
             string json = await DataService.PostDataToService(json_a_enviar, "/correntista/salvar");
 
