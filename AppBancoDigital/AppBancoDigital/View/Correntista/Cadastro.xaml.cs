@@ -34,6 +34,16 @@ namespace AppBancoDigital.View.Correntista
 
                 if (c.Id != null)
                 {
+                    /**
+                     * Vá no arquivo App.xaml.cs e veja que declarei uma propriedade chamada
+                     * DadosCorrentista, que irá armazenar os dados do correntista após o cadastro ou
+                     * login, enquanto ele estiver usando o App.
+                     */ 
+                    App.DadosCorrentista = c;
+
+                    /**
+                     * Navegando para a Tela Inicial após cadastrar e definir os dados do Correntista.
+                     */ 
                     await Navigation.PushAsync(new View.TelaInicial());
                 }
                 else
@@ -41,6 +51,7 @@ namespace AppBancoDigital.View.Correntista
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.StackTrace);
                 await DisplayAlert("Ops!", ex.Message, "OK");
             }
         }
